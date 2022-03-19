@@ -1,5 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 //创建初始状态 
+import { CHANGE_INPUT_VAL, ADD_TO_ARR,DELETE_ARR} from "../store2/actionTypes"
+
 const defaultState = {
   iptval: "",
   arr: [
@@ -16,14 +18,14 @@ export default (state=defaultState, action) => {
 
   //reducer接收到事件需要先判断类型,派发action
   switch(action.type) {
-    case "change_input_val":
+    case CHANGE_INPUT_VAL:
       newState.iptval = action.value
       break;
-      case "add_to_arr":
+      case ADD_TO_ARR:
         newState.arr.push(newState.iptval)
         newState.iptval = ""
         break;
-        case "delete_arr":
+        case DELETE_ARR:
           newState.arr.splice(action.value,1)
           break;
     default:
