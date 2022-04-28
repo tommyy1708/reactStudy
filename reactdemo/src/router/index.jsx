@@ -14,7 +14,7 @@ const BaseRouter = () => {
                 <Route path="/" element={<App1 />}>
                     <Route path="/home" element={<Home />}></Route>
                     <Route path="/detail" element={<Detail />}></Route>
-                    {/* :id代表只要是list后面的不是页面 而是id */}
+                    {/* :id代表从父级路由跳转到该路由之后获取到数据中的其中一个字段,:id这里是个范型 */}
                     <Route path="/list/:id" element={<List />}></Route>
                 </Route>
                 <Route path="*" element={<Error />}></Route>
